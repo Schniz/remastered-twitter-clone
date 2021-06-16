@@ -1,10 +1,15 @@
 import type { Tweet, User } from "@prisma/client";
 import { getSession, getUser } from "~app/session";
 import React from "react";
-import { Link, LoaderFn, useRouteData } from "remastered";
+import {
+  Link,
+  LoaderFn,
+  useRouteData,
+  useForm,
+  FormComponent,
+} from "remastered";
 import { prisma } from "~app/db";
 import { useHref } from "react-router";
-import { useForm } from "~app/Form";
 
 type ShowableTweet = Pick<Tweet, "created_at" | "text"> & {
   user: Pick<User, "username" | "display_name">;
@@ -56,34 +61,14 @@ export default function Home() {
     .reverse();
 
   const allTweets = [...pendingTweets, ...routeData.tweets];
-  const formRef = React.useRef<HTMLFormElement>(null);
 
   return (
     <div>
       {routeData.currentUser ? (
-        <div>
-          <span className="block">Speak your mind</span>
-          <Form
-            action={useHref(`@${routeData.currentUser.username}/new`)}
-            method="post"
-            replace
-            ref={formRef}
-          >
-            <textarea
-              onKeyDown={(event) => {
-                const superKey = event.metaKey || event.ctrlKey;
-                if (superKey && event.key === "Enter") {
-                  formRef.current?.dispatchEvent(
-                    new Event("submit", { bubbles: true, cancelable: true })
-                  );
-                }
-              }}
-              placeholder="... I'm thinking about ..."
-              name="text"
-            ></textarea>
-            <button type="submit">Submit</button>
-          </Form>
-        </div>
+        <ComposeTweetForm
+          currentUsername={routeData.currentUser.username}
+          form={Form}
+        />
       ) : (
         <div>
           You are not logged in. <Link to="sessions/new">Log in</Link> or{" "}
@@ -138,5 +123,37 @@ function TweetView({ tweet }: { tweet: ShowableTweet }) {
       </span>
       <blockquote className="pl-2">{tweet.text}</blockquote>
     </>
+  );
+}
+
+function ComposeTweetForm(props: {
+  currentUsername: string;
+  form: FormComponent;
+}) {
+  const formRef = React.useRef<HTMLFormElement>(null);
+  return (
+    <div>
+      <span className="block">Speak your mind</span>
+      <props.form
+        action={useHref(`@${props.currentUsername}/new`)}
+        method="post"
+        replace
+        ref={formRef}
+      >
+        <textarea
+          onKeyDown={(event) => {
+            const superKey = event.metaKey || event.ctrlKey;
+            if (superKey && event.key === "Enter") {
+              formRef.current?.dispatchEvent(
+                new Event("submit", { bubbles: true, cancelable: true })
+              );
+            }
+          }}
+          placeholder="... I'm thinking about ..."
+          name="text"
+        ></textarea>
+        <button type="submit">Submit</button>
+      </props.form>
+    </div>
   );
 }
