@@ -3,7 +3,10 @@ import { ActionFn, redirectTo } from "remastered";
 import { prisma } from "~app/db";
 import { getSession, getUser } from "~app/session";
 
+const sleep = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
+
 export const action: ActionFn = async ({ request }) => {
+  await sleep(1500);
   const session = await getSession(request);
   const user = await getUser(request);
 
