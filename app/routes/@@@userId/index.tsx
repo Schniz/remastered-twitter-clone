@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
 import React from "react";
 import { LoaderFn, useRouteData } from "remastered";
-import { prisma } from "../../db";
+import { prisma } from "~app/db";
 
 type Data = {
   user: { displayName: User["display_name"] };

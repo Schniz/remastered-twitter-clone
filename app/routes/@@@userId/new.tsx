@@ -1,6 +1,6 @@
-import { redirectBack } from "../../redirectBack";
+import { redirectBack } from "~app/redirectBack";
 import { ActionFn, redirectTo } from "remastered";
-import { prisma } from "../../db";
+import { prisma } from "~app/db";
 import { getSession, getUser } from "~app/session";
 
 export const action: ActionFn = async ({ request }) => {

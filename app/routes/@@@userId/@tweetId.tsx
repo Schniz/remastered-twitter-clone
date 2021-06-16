@@ -1,4 +1,4 @@
-import { prisma } from "../../db";
+import { prisma } from "~app/db";
 import React from "react";
 import { LoaderFn, useRouteData } from "remastered";
 import { Tweet, User } from "@prisma/client";

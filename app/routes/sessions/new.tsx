@@ -1,9 +1,9 @@
-import { getSession } from "../../session";
+import { getSession } from "~app/session";
 import React from "react";
 import { useHref } from "react-router";
 import { LoaderFn, ActionFn, redirectTo, useRouteData } from "remastered";
-import { redirectBack } from "../../redirectBack";
-import * as User from "../../models/User";
+import { redirectBack } from "~app/redirectBack";
+import * as User from "~app/models/User";
 
 type Data = { error?: string };
 
