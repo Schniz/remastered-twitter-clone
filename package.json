@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "remastered dev --port=1234",
-    "build": "remastered generate && tsc --noEmit && prisma migrate dev && remastered build"
+    "build": "remastered generate && tsc --noEmit && prisma migrate dev && remastered build",
+    "vercel-build": "remastered build && remastered-vercel postbuild"
   },
   "dependencies": {
     "@prisma/client": "^2.24.1",
@@ -14,6 +15,7 @@
     "remastered": "^0.1.27"
   },
   "devDependencies": {
+    "@remastered/vercel": "^0.1.27",
     "@types/bcryptjs": "^2.4.2",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
