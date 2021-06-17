@@ -278,10 +278,10 @@
   resolved "https://registry.npmjs.org/@prisma/engines/-/engines-2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922.tgz#68d7850d311df6d017e1b878adb19ec21483bcf0"
   integrity sha512-vjLCk8AFRZu3D8h/SMcWDzTo0xkMuUDyXQzXekn8gzAGjb47B6LQXGR6rDoZ3/uPM13JNTLPvF62mtVaY6fVeQ==
 
-"@remastered/vercel@0.1.29-alpha.1":
-  version "0.1.29-alpha.1"
-  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.29-alpha.1.tgz#665dc368f9022a152518d2da3dee26026135cc2f"
-  integrity sha512-tApfgWipUO6GXAzQhDwXrN69+4/pgX5b08o2qXUb7dfJXZ2TwFXTjvvYHCzeW/G4r1f7LE8mXvy6sQgdZf7fRw==
+"@remastered/vercel@0.1.29-alpha.2":
+  version "0.1.29-alpha.2"
+  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.29-alpha.2.tgz#9752230c7d1d267d7d4cad8e5094670c7174e123"
+  integrity sha512-W2RF0XZ91zJZqDc18HxsjhDlfqkHJyY3eXFejEzQz/4SoGBHQHLTeDsotOBVx4yBYXJBXLAzDry6MarkV1lJIQ==
   dependencies:
     fs-extra "^10.0.0"
     lodash "^4.17.21"
@@ -1539,10 +1539,10 @@ regenerator-runtime@^0.13.4:
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
   integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
 
-remastered@0.1.29-alpha.1:
-  version "0.1.29-alpha.1"
-  resolved "https://registry.npmjs.org/remastered/-/remastered-0.1.29-alpha.1.tgz#99a0877254f338e96278e390ee78526041173364"
-  integrity sha512-rm+WMiYOPUl7dP3vla+T3SOrojmPKXoPPPGZfSSpPcCN+DrQnRkcjm00Sd3QVjYKh3ihoF2NhX8O+Qz3aopSOw==
+remastered@0.1.29-alpha.2:
+  version "0.1.29-alpha.2"
+  resolved "https://registry.npmjs.org/remastered/-/remastered-0.1.29-alpha.2.tgz#cc32aae6f4e52d92acdd94d233ca82afc46002b9"
+  integrity sha512-DNopV8BsQ8dW0d+nLrdG7vBlqTnyi5ahFAQWOljHJC7ekPtVG6euANFUxCMyVyPCHt9KX4NE/KUNnMAKvjddXQ==
   dependencies:
     "@swc/core" "^1.2.57"
     "@vitejs/plugin-react-refresh" "^1.3.3"
