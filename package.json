@@ -12,7 +12,7 @@
   "dependencies": {
     "@prisma/client": "^2.24.1",
     "bcryptjs": "^2.4.3",
-    "remastered": "^0.1.27"
+    "remastered": "0.1.29-alpha.1"
   },
   "devDependencies": {
     "@remastered/vercel": "0.1.29-alpha.1",
