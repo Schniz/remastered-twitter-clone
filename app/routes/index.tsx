@@ -7,9 +7,10 @@ import {
   useRouteData,
   useForm,
   FormComponent,
+  ParamLink,
+  routePath,
 } from "remastered";
 import { prisma } from "~app/db";
-import { useHref } from "react-router";
 
 type ShowableTweet = Pick<Tweet, "created_at" | "text"> & {
   user: Pick<User, "username" | "display_name">;
@@ -87,7 +88,7 @@ export default function Home() {
             return (
               <li
                 key={tweet.id ?? tweet.text}
-                className={tweet.id ? "" : "opacity-75"}
+                className={tweet.id ? "" : "opacity-50"}
               >
                 <TweetView tweet={tweet} />
               </li>
@@ -104,13 +105,20 @@ function TweetView({ tweet }: { tweet: ShowableTweet }) {
     <>
       <span>
         <span>{tweet.user.display_name}</span>{" "}
-        <Link className="opacity-75" to={`@${tweet.user.username}`}>
+        <ParamLink
+          className="opacity-75"
+          route="/@:userId/"
+          params={{ userId: tweet.user.username }}
+        >
           @{tweet.user.username}
-        </Link>{" "}
+        </ParamLink>{" "}
         {!tweet.id ? (
           <span>[pending submit]</span>
         ) : (
-          <Link to={`@${tweet.user.username}/${tweet.id}`}>
+          <ParamLink
+            route="/@:userId/:tweetId"
+            params={{ userId: tweet.user.username, tweetId: String(tweet.id) }}
+          >
             at{" "}
             <time
               suppressHydrationWarning
@@ -118,7 +126,7 @@ function TweetView({ tweet }: { tweet: ShowableTweet }) {
             >
               {tweet.created_at.toLocaleString()}
             </time>
-          </Link>
+          </ParamLink>
         )}
       </span>
       <blockquote className="pl-2">{tweet.text}</blockquote>
@@ -135,7 +143,7 @@ function ComposeTweetForm(props: {
     <div>
       <span className="block">Speak your mind</span>
       <props.form
-        action={useHref(`@${props.currentUsername}/new`)}
+        action={routePath("/@:userId/new", { userId: props.currentUsername })}
         method="post"
         replace
         ref={formRef}

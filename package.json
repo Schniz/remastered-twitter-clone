@@ -6,12 +6,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "remastered dev --port=1234",
-    "build": "tsc --noEmit && prisma migrate dev && remastered build"
+    "build": "remastered generate && tsc --noEmit && prisma migrate dev && remastered build"
   },
   "dependencies": {
     "@prisma/client": "^2.24.1",
     "bcryptjs": "^2.4.3",
-    "remastered": "../remastered/packages/remastered"
+    "remastered": "^0.1.27"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
