@@ -278,12 +278,11 @@
   resolved "https://registry.npmjs.org/@prisma/engines/-/engines-2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4.tgz#7e542d510f0c03f41b73edbb17254f5a0b272a4d"
   integrity sha512-29/xO9kqeQka+wN5Ev10l5L4XQXNVXdPToJs1M29VZ2imQsNsL4rtz26m3qGM54IoGWwwfTVdvuVRxKnDl2rig==
 
-"@remastered/vercel@^0.1.27":
-  version "0.1.27"
-  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.27.tgz#014c43cf70c99597442ca27ea6015f9dac94a760"
-  integrity sha512-fkJY9GlvHJxoIibDgZqJcChVpBf4EES9cRgSsoEBfhYA5TulWvS2FSNMlpjd2Ce5C1Z/yf0BWfb7/aeR7VSsQA==
+"@remastered/vercel@^0.1.28":
+  version "0.1.28"
+  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.28.tgz#b83afa7f3252953cdcbc0f36e8cc9fcdd347e391"
+  integrity sha512-+ajmRw/8M3WqB5z1kvfqbyEWXMircWesWth7vgICZ/7dxf/ZPdgZEnwEzGTjdLONiLOT7RkfXga9zfCstbfKXg==
   dependencies:
-    esm "^3.2.25"
     fs-extra "^10.0.0"
     lodash "^4.17.21"
     node-fetch "^2.6.1"
