@@ -278,10 +278,10 @@
   resolved "https://registry.npmjs.org/@prisma/engines/-/engines-2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922.tgz#68d7850d311df6d017e1b878adb19ec21483bcf0"
   integrity sha512-vjLCk8AFRZu3D8h/SMcWDzTo0xkMuUDyXQzXekn8gzAGjb47B6LQXGR6rDoZ3/uPM13JNTLPvF62mtVaY6fVeQ==
 
-"@remastered/vercel@0.1.29-alpha.0":
-  version "0.1.29-alpha.0"
-  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.29-alpha.0.tgz#45408e5a0eca7a0f58ad0720e27277d9d0763b38"
-  integrity sha512-B00EaWeNIxiAD1WA3Ia/AjhOBI4h/KUlGztUa7xR7pOrYV/ank1+a1q8Bg++lI0EXmAr8u4NH6e/OIoIDsalxg==
+"@remastered/vercel@0.1.29-alpha.1":
+  version "0.1.29-alpha.1"
+  resolved "https://registry.npmjs.org/@remastered/vercel/-/vercel-0.1.29-alpha.1.tgz#665dc368f9022a152518d2da3dee26026135cc2f"
+  integrity sha512-tApfgWipUO6GXAzQhDwXrN69+4/pgX5b08o2qXUb7dfJXZ2TwFXTjvvYHCzeW/G4r1f7LE8mXvy6sQgdZf7fRw==
   dependencies:
     fs-extra "^10.0.0"
     lodash "^4.17.21"
