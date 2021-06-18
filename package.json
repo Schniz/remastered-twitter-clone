@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "remastered dev --port=1234",
     "build": "remastered generate && tsc --noEmit && prisma migrate dev && remastered build",
-    "vercel-build": "DATABASE_URL=sqlite:$(pwd)/dist/db.sqlite3 yarn build && remastered-vercel postbuild"
+    "vercel-build": "DATABASE_URL=sqlite:$(pwd)/tmp/db.sqlite3 yarn build && remastered-vercel postbuild && mv tmp/db.sqlite* dist/"
   },
   "dependencies": {
     "@prisma/client": "^2.24.1",
