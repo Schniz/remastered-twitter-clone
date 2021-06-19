@@ -7,7 +7,7 @@ import os from "os";
 const rootDir = path.join(__dirname, "..");
 
 const dbDir = path.join(os.tmpdir(), "db");
-fs.mkdirpSync(dbPath);
+fs.mkdirpSync(dbDir);
 fs.copySync(path.join(__dirname, "../dist/db"), dbDir);
 
 process.env.DATABASE_URL = `sqlite:${dbDir}/db.sqlite3`;
