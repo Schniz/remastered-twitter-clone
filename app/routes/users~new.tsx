@@ -1,5 +1,11 @@
 import React from "react";
-import { ActionFn, LoaderFn, redirectTo, useRouteData } from "remastered";
+import {
+  ActionFn,
+  LoaderFn,
+  redirectTo,
+  routePath,
+  useRouteData,
+} from "remastered";
 import { getSession } from "../session";
 import * as User from "../models/User";
 import { useHref } from "react-router";
@@ -30,7 +36,7 @@ export const action: ActionFn = async ({ request }) => {
   });
   session.set("userId", user.id);
   session.flash("notice", "Successfuly registered!");
-  return redirectTo(`/@${user.id}`, {
+  return redirectTo(routePath("/@:userId/", { userId: String(user.id) }), {
     headers: {
       "Set-Cookie": await session.commit(),
     },
